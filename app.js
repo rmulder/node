@@ -1,15 +1,12 @@
 const path = require('path');
 const os = require('os');
+const fs = require('fs');
 
-const log = require('./logger');
+// const files = fs.readdirSync('./');
+fs.readdir('./', function (err, files) {
+    if (err) console.log('Error', err);
+    else console.log('Result', files);
 
-var pathObj = path.parse(__filename);
+});
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
-
-
-//Template string
-//ES6
-console.log(`Total Memory: ${totalMemory}`);
-console.log(`Free Memory: ${freeMemory}`);
+// console.log(files);
