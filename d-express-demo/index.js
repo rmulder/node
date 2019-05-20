@@ -59,8 +59,6 @@ app.put('/api/courses/:id', (req, res) => {
   res.send(course);
 });
 
-
-
 app.delete('/api/courses/:id', (req, res) => {
   //404
   const course = courses.find(c => c.id === parseInt(req.params.id));
@@ -72,8 +70,6 @@ app.delete('/api/courses/:id', (req, res) => {
   res.send(course);
 
 });
-
-
 
 function validateCourse(course) {
   const schema = {
