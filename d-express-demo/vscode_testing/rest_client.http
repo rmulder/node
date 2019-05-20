@@ -1,0 +1,16 @@
+
+@host = localhost:3000
+
+GET /api/courses
+Host: {{host}}
+
+# ###
+# put /api/courses/1
+# Host: {{host}}
+# Content-Type: application/json
+
+# {}
+
+
+# DELETE /api/courses/1
+# Host: {{host}}
