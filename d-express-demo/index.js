@@ -8,6 +8,9 @@ const auth = require('./authentication');
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './views'); // default
+
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
@@ -45,7 +48,10 @@ const courses = [{
 ];
 
 app.get('/', (req, res) => {
-  res.send('Hello World!!!');
+  res.render('index', {
+    title: 'My Express App',
+    message: 'Hello'
+  });
 });
 
 app.get('/api/courses', (req, res) => {
