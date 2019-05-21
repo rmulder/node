@@ -1,3 +1,5 @@
+const morgan = require('morgan');
+const helmet = require('helmet');
 const Joi = require('joi');
 const logger = require('./logger');
 const auth = require('./authentication');
@@ -8,7 +10,14 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(helmet());
 app.use(express.static('public'));
+
+if (app.get('env') === 'development') {
+  app.use(morgan('tiny'));
+  console.log('Morgan enabled...');
+}
+
 app.use(logger);
 app.use(auth);
 
