@@ -1,0 +1,29 @@
+@host = localhost:3000
+
+GET  /api/genres
+Host: {{host}}
+
+###
+GET /api/genres/1
+Host: {{host}}
+
+###
+POST /api/genres
+Host: {{host}}
+Content-Type: application/json
+
+{
+  "name": "test"
+}
+####
+
+PUT /api/genres/4
+Host: {{host}}
+Content-Type: application/json
+
+{
+  "name": "new genre"
+}
+###
+DELETE /api/genres/5
+Host: {{host}}
